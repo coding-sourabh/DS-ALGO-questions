@@ -38,51 +38,17 @@ const int mod = 100000;
  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////f//////////////////////////////////////////////////////////////////////////////
 
-void generate_subset(int start , int a[] , int n , vi &v)
-{   
-	int sum;
-	for(int i=0 ; i < (1<<n) ; i++)
-	{   
-		sum = 0;
-		for(int j=0 ; j<n ; j++)
-		{
-            if(i &  (1<<j) )
-            	sum += a[j + start];
-		}
-
-		v.p_b(sum);
-	}
-}
 
 void solve()
 {
-   int N,A,B;
-   cin>>N>>A>>B;
-   int a[N];
-   loop(i,0,N) cin>>a[i];
-   
-   vi left,right;
-   vector<int>::iterator low,high;
-
-   generate_subset(0 , a , N/2 , left);    
-   generate_subset(N/2 , a , N & 1 ? N/2+1 : N/2 , right);   	 
-   sort(right.begin() , right.end());
-   
-   int ans = 0;
-   for(int i=0;i<left.size();i++)
-    {
-        low=lower_bound(right.begin(),right.end(),A-left[i]);
-        high=upper_bound(right.begin(),right.end(),B-left[i]);
-        ans+=(high-right.begin())-(low-right.begin());
-    }
-    cout<<ans<<endl;
+	cout<<"HEY THERE!!";
 }
 
 int32_t main()
 {
 	c_s();
 	io
- 	// multipletest
+ 	multipletest
 	solve();
 }
 
